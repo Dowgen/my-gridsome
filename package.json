@@ -10,6 +10,7 @@
     "gridsome": "^0.7.0"
   },
   "devDependencies": {
-    "cache-loader": "^4.1.0"
+    "cache-loader": "^4.1.0",
+    "file-loader": "^6.2.0"
   }
 }

@@ -1,0 +1,55 @@
+{
+  "projects": [
+    {
+      "id": "9d2555759e0b86d6a90185749a9b7f18",
+      "date": "2019",
+      "title": "Banana",
+      "imgUrl": "/img/banana.jpeg",
+      "categories": ["photography", "pink"],
+      "path": "/projects/chelsea-landmark/"
+    },
+    {
+      "id": "6c2145f0a933665889c317c7ccce8687",
+      "date": "2019",
+      "title": "Pineapple",
+      "imgUrl": "/img/pineapple.jpg",
+      "categories": ["photography", "blue"]
+    },
+    {
+      "id": "01bc6b60f686f9dba9ef7b26d55bb5ae",
+      "date": "2019",
+      "title": "Ice Cream",
+      "imgUrl": "/img/icecream.jpg",
+      "categories": ["photography", "yellow"]
+    },
+    {
+      "id": "14def77cd92a4502dc159fcbc4b9d93e",
+      "date": "2019",
+      "title": "Porta400",
+      "imgUrl": "/img/film.jpg",
+      "categories": ["photography", "yellow"]
+    }
+  ],
+  "journals": [
+    {
+      "id": "8c0554389cbe23d003e44749d9e09ede",
+      "path": "/journal/gridsome-forestry-cms/",
+      "title": "Gridsome with Forestry CMS"
+    },
+    {
+      "id": "880bdb7b331f22ee5155ce71e472c880",
+      "path": "/journal/use-gridsome-vuejs/",
+      "title": "VueJS for your next project"
+    },
+    {
+      "id": "059f620a6c352698622c099247c998df",
+      "path": "/journal/macos-development-environment/",
+      "title": "macOS development environment"
+    },
+    {
+      "id": "f7d7613109e419325c1b6efa58d5eb7a",
+      "path": "/journal/a-journal-entry/",
+      "title": "About Typography"
+    }
+  ]
+}
