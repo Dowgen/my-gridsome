@@ -24,6 +24,9 @@ module.exports = function (api) {
   })
 
   api.createPages(({ createPage }) => {
-    // Use the Pages API here: https://gridsome.org/docs/pages-api/
+    createPage({
+      path: '/project/:id',
+      component: './src/components/Project.vue'
+    })
   })
 }

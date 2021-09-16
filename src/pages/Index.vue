@@ -11,7 +11,7 @@
       <div class="projects">
         <template v-for="edge in $page.allProjects.edges">
           <div class="project" :key="edge.node.id">
-            <a href="/projects/chelsea-landmark/" class="project-link">
+            <a :href="`/project/${edge.node.id}`" class="project-link">
               <g-image
                 :src="edge.node.imgUrl"
                 class="thumbnail g-image g-image--loaded"
@@ -41,7 +41,6 @@
         </div>
       </div>
     </div>
-    <CopyRight />
   </Layout>
 </template>
 
@@ -69,23 +68,14 @@ query {
 </page-query>
 
 <script>
-import CopyRight from "~/components/CopyRight.vue";
-
 export default {
   metaInfo: {
     title: "Dowgen gridsome",
-  },
-  components: {
-    CopyRight,
-  },
-  mounted(){
-
   }
 };
 </script>
 
 <style scoped>
-
 .hero {
   text-align: center;
   width: 480px;

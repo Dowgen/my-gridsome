@@ -1,5 +1,5 @@
 <template>
-  <div class="layout">
+  <div class="layout sticky-header">
     <header class="header">
       <div class="header-content">
         <strong>
@@ -8,12 +8,13 @@
           </g-link>
         </strong>
         <nav class="nav">
-          <g-link class="nav__link" to="/">Journal</g-link>
-          <g-link class="nav__link" to="/about/">Say Hi!</g-link>
+          <g-link class="nav__link" to="/journal">Journal</g-link>
+          <g-link class="nav__link" to="/contact">Say Hi!</g-link>
         </nav>
       </div>
     </header>
     <slot/>
+    <CopyRight />
   </div>
 </template>
 
@@ -25,6 +26,15 @@ query {
 }
 </static-query>
 
+<script>
+import CopyRight from "~/components/CopyRight.vue";
+
+export default {
+  components: {
+    CopyRight,
+  },
+}
+</script>
 <style>
 body {
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
@@ -271,31 +281,6 @@ pre[class*="language-"] {
 .token.entity {
   cursor: help;
 }
-.project-header {
-  padding: 20vh 0 4rem;
-}
-.project-title {
-  font-size: 4rem;
-  margin: 0 0 4rem;
-  padding: 0;
-}
-.project-info {
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 0.8rem;
-}
-.project-info > div {
-  margin-right: 4rem;
-}
-.project-info > div:last-of-type {
-  margin: 0;
-}
-.category:after {
-  content: ", ";
-}
-.category:last-of-type:after {
-  content: "";
-}
 p {
   line-height: 1.5;
   font-size: 1.15rem;
@@ -310,64 +295,5 @@ h4,
 h5,
 h6 {
   font-size: 1.15rem;
-}
-.contact-header {
-  padding: 2rem 0 4rem;
-}
-.contact-title {
-  font-size: 4rem;
-  margin: 0 0 4rem;
-  padding: 0;
-}
-.sender-info {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
-}
-.sender-info > div {
-  flex: 1;
-  margin-right: 4rem;
-}
-.sender-info > div:last-of-type {
-  margin: 0;
-}
-input:focus,
-textarea:focus {
-  border-color: var(--color-contrast-1);
-}
-input,
-textarea {
-  background: transparent;
-  border: 1px solid var(--color-base-1);
-  outline: none;
-  border-radius: 0.3rem;
-  padding: 0.8rem 1rem;
-  color: inherit;
-  font-size: 1rem;
-  width: 100%;
-}
-textarea {
-  resize: none;
-  height: 140px;
-}
-.button {
-  color: var(--color-base);
-  background: var(--color-contrast);
-  outline: none;
-  border: 0;
-  font-size: 0.8rem;
-  padding: 0.8rem 1.6rem;
-  border-radius: 0.3rem;
-  margin-top: 2rem;
-  cursor: pointer;
-  transition: opacity 0.25s ease;
-  font-size: 500;
-  letter-spacing: 0.035em;
-}
-.button:hover {
-  opacity: 0.6;
-}
-.button:focus {
-  border: 1px solid var(--color-base-1);
 }
 </style>
