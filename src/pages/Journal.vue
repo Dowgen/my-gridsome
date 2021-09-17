@@ -10,7 +10,7 @@
     <template v-for="edge in $page.allJournals.edges">
       <a
         :key="edge.node.id"
-        href="/journal/gridsome-forestry-cms/"
+        :href="`/journal/${edge.node.id}`"
         class="journal-post"
         ><div class="container journal">
           <h2 class="journal-title">{{ edge.node.title }}</h2>

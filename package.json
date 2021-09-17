@@ -7,6 +7,7 @@
     "build": "gridsome build"
   },
   "dependencies": {
+    "axios": "^0.21.4",
     "gridsome": "^0.7.0"
   },
   "devDependencies": {

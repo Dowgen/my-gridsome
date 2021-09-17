@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div class="container">
+    <div class="container" v-if="formData">
       <div class="contact-header">
         <h1 class="contact-title">Say hi!</h1>
         <p>
@@ -8,37 +8,69 @@
           you as soon as possible.
         </p>
       </div>
-      <form name="contact" class="contact-form">
+      <form
+        name="contact"
+        class="contact-form"
+        v-on:submit.prevent="handleSubmit"
+      >
         <div class="sender-info">
           <div>
             <label for="name" class="label">Your name</label
-            ><input type="text" name="name" />
+            ><input type="text" v-model="formData.name" />
           </div>
           <div>
             <label for="email" class="label">Your email</label
-            ><input type="email" name="email" />
+            ><input type="email" v-model="formData.email" />
           </div>
         </div>
         <div class="message">
           <label for="message" class="label">Message</label
-          ><textarea name="message"></textarea>
+          ><textarea v-model="formData.message"></textarea>
         </div>
-        <button class="button">Submit form</button>
+        <button class="button" type="submit">Submit form</button>
       </form>
     </div>
   </Layout>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   metaInfo: {
     title: "Dowgen gridsome",
-  }
+  },
+  data() {
+    return {
+      formData: {
+        name: "",
+        email: "",
+        message: "",
+      },
+    };
+  },
+  methods: {
+    handleSubmit(e) {
+      axios({
+        method: "POST",
+        url: "http://113.31.153.19:1337/contacts", 
+        data: this.formData
+      }).then(res => {
+        console.log(res);
+        if(res.status === 200){
+          alert('submit success!')
+        }else{
+          alert(res.statusText)
+        }
+      }).catch(err => {
+        alert(err);
+      })
+    },
+  },
 };
 </script>
 
 <style scoped>
-
 .contact-header {
   padding: 2rem 0 4rem;
 }

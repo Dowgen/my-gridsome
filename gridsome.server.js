@@ -28,5 +28,9 @@ module.exports = function (api) {
       path: '/project/:id',
       component: './src/components/Project.vue'
     })
+    createPage({
+      path: '/journal/:id',
+      component: './src/components/Journal.vue'
+    })
   })
 }
