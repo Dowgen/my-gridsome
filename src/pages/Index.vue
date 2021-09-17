@@ -34,7 +34,7 @@
       <div class="latest-journals">
         <div class="container">
           <template v-for="edge in $page.allJournals.edges">
-            <a :href="edge.node.path" class="journal" :key="edge.node.id">
+            <a :href="`/journal/${edge.node.id}`" class="journal" :key="edge.node.id">
               <h3 class="journal-title">{{ edge.node.title }}</h3>
             </a>
           </template>
